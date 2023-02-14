@@ -1,4 +1,4 @@
-from log.Logger import Logger
+from src.logger.Logger import Logger
 
 class Parachute:
     def __init__(self):

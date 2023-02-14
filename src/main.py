@@ -1,4 +1,4 @@
-from log.Logger import Logger
+from src.logger.Logger import Logger
 from src.parachute.Parachute import Parachute
 from src.radio.Radio import Radio
 from src.sensor.Sensor import Sensor

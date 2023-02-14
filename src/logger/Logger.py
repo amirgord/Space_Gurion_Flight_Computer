@@ -6,7 +6,7 @@ class Logger:
 
     def __init__(self):
         """Initialize the logger with a directory to store log files."""
-        self.log_dir = "logs"
+        self.log_dir = "../../log/logs"
         os.makedirs(self.log_dir, exist_ok=True)
         self.log_file = self._get_log_filename()
 

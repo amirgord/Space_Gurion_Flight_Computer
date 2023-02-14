@@ -1,8 +1,7 @@
-import time
 import board
 import busio
 import adafruit_lsm6ds
-from log.Logger import Logger
+from src.logger.Logger import Logger
 
 class Sensor:
     def __init__(self):
