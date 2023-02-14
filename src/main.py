@@ -1,15 +1,17 @@
+from log.Logger import Logger
+from src.sensor.Sensor import Sensor
+
 # import "bit/"
 # import "parachute/Parachute.py"
-# import "sensor/Sensor.py"
 # import "radio/Radio.py"
 # import "../log/Logger.py"
 
 def main():
     #Initilize sesors & write to looger: -------------
     # Parachute parachute
-    # Sensor sensor
+    sensor = Sensor();
     # Radio radio
-    # Logger logger
+    logger = Logger();
     
     
     #BIT & write to looger: ----------
@@ -17,15 +19,16 @@ def main():
     
     #Main loop:
     while True:
-        #get data from sensors & write to looger: ---------
-        
+        #get data from sensors.
+        #  the sensor write to looger
+        sensor.getData();
+
         #open parachute & write to looger: ------------
-        
+
+
         #send data & write to looger: --------
         break
         
 
 if __name__ == '__main__':
     main()
-    #try one to
-    #new
