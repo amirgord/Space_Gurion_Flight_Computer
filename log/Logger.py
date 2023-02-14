@@ -10,6 +10,8 @@ class Logger:
         os.makedirs(self.log_dir, exist_ok=True)
         self.log_file = self._get_log_filename()
 
+        self.write("Logger::__init__()")
+
     def _get_log_filename(self):
         """Create a filename for the log file based on the current date and time."""
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")

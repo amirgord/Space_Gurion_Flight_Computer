@@ -2,14 +2,15 @@ import time
 import board
 import busio
 import adafruit_lsm6ds
-from log.Logger import Logger  # Import the Logger class
+from log.Logger import Logger
 
 class Sensor:
     def __init__(self):
         """Initialize I2C bus and sensor."""
         self.i2c = busio.I2C(board.SCL, board.SDA)
         self.sensor = adafruit_lsm6ds.LSM6DS33(self.i2c)
-        self.logger = Logger("../log/mylog.log")
+        self.logger = Logger()
+        self.logger.write("Sensor::__init__()")
 
     def detData(self):
         # Read acceleration and gyro values.

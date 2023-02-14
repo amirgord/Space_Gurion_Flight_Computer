@@ -1,32 +1,28 @@
 from log.Logger import Logger
+from src.parachute.Parachute import Parachute
+from src.radio.Radio import Radio
 from src.sensor.Sensor import Sensor
 
-# import "bit/"
-# import "parachute/Parachute.py"
-# import "radio/Radio.py"
-# import "../log/Logger.py"
 
 def main():
-    #Initilize sesors & write to looger: -------------
-    # Parachute parachute
+    #Initilize:
+    parachute = Parachute();
     sensor = Sensor();
-    # Radio radio
+    radio = Radio();
     logger = Logger();
     
-    
-    #BIT & write to looger: ----------
-    
-    
+    #BIT:
+
     #Main loop:
     while True:
-        #get data from sensors.
-        #  the sensor write to looger
+        #get data from sensors:
         sensor.getData();
 
-        #open parachute & write to looger: ------------
+        #check open parachute:
 
+        #check move:
 
-        #send data & write to looger: --------
+        #send data:
         break
         
 
