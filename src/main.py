@@ -25,3 +25,7 @@ def main():
         break
         
 
+if __name__ == '__main__':
+    main()
+    #try one to
+    #new
