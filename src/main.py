@@ -1,3 +1,4 @@
+from src.bit.BIT import BIT
 from src.logger.Logger import Logger
 from src.parachute.Parachute import Parachute
 from src.radio.Radio import Radio
@@ -13,10 +14,11 @@ def main():
     sensor = Sensor()
     radio = Radio()
     stabilizer = Stabilizer()
+    bit = BIT()
 
 
     logger.write("---------------------- BIT ----------------------")
-    #BIT:
+    bit.test()
 
 
     logger.write("---------------------- Main loop ----------------------")
