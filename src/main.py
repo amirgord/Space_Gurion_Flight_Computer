@@ -2,29 +2,43 @@ from src.logger.Logger import Logger
 from src.parachute.Parachute import Parachute
 from src.radio.Radio import Radio
 from src.sensor.Sensor import Sensor
+from src.stabilize.Stabilizer import Stabilizer
 
 
 def main():
-    #Initilize:
-    parachute = Parachute();
-    sensor = Sensor();
-    radio = Radio();
-    logger = Logger();
-    
+    logger = Logger()
+
+    logger.write("---------------------- Initilize ----------------------")
+    parachute = Parachute()
+    sensor = Sensor()
+    radio = Radio()
+    stabilizer = Stabilizer()
+
+
+    logger.write("---------------------- BIT ----------------------")
     #BIT:
 
-    #Main loop:
+
+    logger.write("---------------------- Main loop ----------------------")
     while True:
         #get data from sensors:
-        sensor.getData();
+        sensor.get_data()
 
         #check open parachute:
+        if sensor.check_freefall():
+            parachute.open()
 
         #check move:
+        if sensor.out_of_curse():
+            stabilizer.move()
 
         #send data:
-        break
-        
+        radio.send("data")
+
+        #check if ground:
+        if sensor.ground():
+            break
+
 
 if __name__ == '__main__':
     main()

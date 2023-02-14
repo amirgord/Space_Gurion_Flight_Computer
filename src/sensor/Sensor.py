@@ -11,16 +11,23 @@ class Sensor:
         self.logger = Logger()
         self.logger.write("Sensor::__init__()")
 
-    def detData(self):
+    def get_data(self):
         # Read acceleration and gyro values.
-        accel_x, accel_y, accel_z = self.sensor.acceleration
-        gyro_x, gyro_y, gyro_z = self.sensor.gyro
+        self.accel_x, self.accel_y, self.accel_z = self.sensor.acceleration
+        self.gyro_x, self.gyro_y, self.gyro_z = self.sensor.gyro
 
         # Write the values to the logger.
-        self.logger.write("Acceleration (m/s^2): ({0:.2f}, {1:.2f}, {2:.2f})".format(accel_x, accel_y, accel_z))
-        self.logger.write("Gyro (rad/s): ({0:.2f}, {1:.2f}, {2:.2f})".format(gyro_x, gyro_y, gyro_z))
+        self.logger.write("Acceleration (m/s^2): ({0:.2f}, {1:.2f}, {2:.2f})".format(self.accel_x, self.accel_y, self.accel_z))
+        self.logger.write("Gyro (rad/s): ({0:.2f}, {1:.2f}, {2:.2f})".format(self.gyro_x, self.gyro_y, self.gyro_z))
 
+    def check_freefall(self):
+        return True
 
+    def out_of_curse(self):
+        return True
+
+    def ground(self):
+        return True
 
 
 
