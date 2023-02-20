@@ -24,7 +24,7 @@ def main():
     logger.write("---------------------- Main loop ----------------------")
     while True:
         #get data from sensors:
-        sensor.get_data()
+        data = sensor.get_data()
 
         #check open parachute:
         if sensor.check_freefall():
@@ -35,7 +35,7 @@ def main():
             stabilizer.move()
 
         #send data:
-        radio.send("data")
+        radio.send(data)
 
         #check if ground:
         if sensor.ground():
