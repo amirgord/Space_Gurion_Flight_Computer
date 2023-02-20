@@ -1,12 +1,11 @@
 import time
-import threading
 import spidev
 import RPi.GPIO as GPIO
 from lib_nrf24 import NRF24
 
 from src.logger.Logger import Logger
 
-class Radio(threading.Thread):
+class Radio():
     def __init__(self):
         self.logger = Logger()
 
